@@ -3,10 +3,6 @@ pipeline {
 
     stages {
         stage('Install Docker') {
-            when {
-                // Run this stage only if Docker is not already installed
-                expression { !sh(script: 'docker --version', returnStatus: true) == 0 }
-            }
             steps {
                 script {
                     echo 'Docker not found. Installing Docker...'
