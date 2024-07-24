@@ -8,16 +8,16 @@ pipeline {
                     echo 'Docker not found. Installing Docker...'
                     
                     // Update package list
-                    sh 'sudo apt-get update'
+                    sh 'apt-get update'
                     
                     // Install Docker
-                    sh 'sudo apt-get install -y docker.io'
+                    sh 'apt-get install -y docker.io'
                     
                     // Start Docker service
-                    sh 'sudo systemctl start docker'
+                    sh 'systemctl start docker'
                     
                     // Enable Docker to start on boot
-                    sh 'sudo systemctl enable docker'
+                    sh 'systemctl enable docker'
                     
                     // Verify Docker installation
                     sh 'docker --version'
